@@ -1,20 +1,16 @@
 import React from 'react'
-import Style from '../styles/Video.module.css'
+import Styles from '../styles/Video.module.css'
 import image from '../assets/img/3.jpg'
 
-function Video() {
-    return (
-      <a href="quiz.html">
-        <div className={Style.video}>
-          <img src={image} alt="" />
-          <p>#23 React Hooks Bangla - React useReducer hook Bangla</p>
-          <div className={Style.qmeta}>
-            <p>10 Questions</p>
-            <p>Score : Not taken yet</p>
-          </div>
-        </div>
-      </a>
-    );
+export default function Video({ title, id, noq }) {
+  return (
+    <div className={Styles.video}>
+      <img src={image} alt={title} />
+      <p>{title}</p>
+      <div className={Styles.qmeta}>
+        <p>{noq} Questions</p>
+        <p>Total points : {noq * 5}</p>
+      </div>
+    </div>
+  );
 }
-
-export default Video
